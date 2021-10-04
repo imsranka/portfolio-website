@@ -1,9 +1,41 @@
+@import url("./global-var.css");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  background: var(--primary-white);
+  color: var(--primary-black);
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+::-webkit-scrollbar {
+  /* display: none; */
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../assets/fonts/PlayfairDisplay-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "museo-sans";
+  src: url(../assets/fonts/MuseoSans_500.otf) format("opentype");
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline-block;
+  margin: 0;
 }
 
 a {
@@ -12,5 +44,33 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  vertical-align: baseline;
+  outline: none;
+  font-family: "Playfair Display", serif, "museo-sans";
 }
+
+.sr-wrapper,
+.sr-container {
+  position: relative;
+  height: calc(100%);
+  display: inline-block;
+}
+
+.sr-wrapper {
+  width: calc(100% - 250px);
+  color: var(--main-font-color);
+}
+
+.sr-container {
+  width: 100%;
+  /* background: var(--main-background); */
+}
+
+.grid {
+  display: grid;
+  grid-template: 1fr/250px 100%;
+}
+/* #393341 */

@@ -1,0 +1,65 @@
+.work_wrapper,
+.work_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.work_wrapper {
+  overflow: hidden;
+}
+
+.work_slider {
+  display: inline-block;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(110%);
+  transition: all 0.6s cubic-bezier(0.15, 0.005, 0.155, 1);
+  padding: 3em 4em;
+}
+
+.work_slider__active {
+  transform: translateY(0);
+}
+
+.work_slider__prev {
+  transform: translateY(-110%);
+}
+
+.work_slider__no_transition {
+  transition: all 0s;
+}
+
+.work_slider::after {
+  top: 1em;
+}
+
+.work_slider::before {
+  bottom: 1em;
+}
+
+.button_left,
+.button_right {
+  position: absolute;
+  z-index: 2;
+  height: 3em;
+  width: 2em;
+  top: 50%;
+  left: 4em;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* .button_left {
+} */
+
+.button_right {
+  top: calc(50% + 3em);
+}
+
+.work_slider__content {
+  box-shadow: 0 30px 60px rgb(0 0 0 / 35%);
+  height: 100%;
+}

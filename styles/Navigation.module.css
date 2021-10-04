@@ -1,0 +1,54 @@
+/* nav.nav_wrapper {
+  height: 64px;
+} */
+
+nav.nav_wrapper {
+  position: relative;
+  height: 100vh;
+  padding: 0 0 0 3em;
+  width: 170px;
+  /* display: inline-block; */
+}
+
+.nav_link {
+  display: block;
+  margin: 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: color 1s, text-decoration 1.5s;
+  line-height: 36px;
+}
+
+.nav_link:hover {
+  color: violet;
+  /* text-decoration: underline; */
+}
+
+.nav_menu {
+  position: absolute;
+  bottom: 0;
+  padding: 0 0 3em 0;
+  width: 100px;
+}
+
+.logo {
+  display: inline-block;
+  letter-spacing: 0.233em;
+  text-transform: uppercase;
+  margin: 1em 0 0 0;
+  height: calc(64px - 2em);
+  font-size: 12px;
+  line-height: calc(64px - 2em);
+}
+
+.nav_strike {
+  text-decoration: line-through;
+}
+
+.nav_no_strike {
+  text-decoration: none;
+}
+
+.nav_title {
+  font-family: " museo-sans";
+}
