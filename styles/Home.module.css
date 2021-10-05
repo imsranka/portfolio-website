@@ -16,10 +16,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* animation: jump duration timing-function delay iteration-count direction fill-mode; */
-}
-
-.center {
 }
 
 .home_title {
@@ -32,7 +28,6 @@
 .home_intro {
   /* white-space: pre-wrap; */
   line-height: 30px;
-  /* font-size: 24px; */
   font-size: 20px;
 }
 
@@ -69,8 +64,6 @@
 }
 
 .social::after {
-  /* height: 3px;
-  width: 3px; */
   /* background: rgb(163, 138, 138); */
   content: "|";
   margin-left: calc(0.75em / 2);
