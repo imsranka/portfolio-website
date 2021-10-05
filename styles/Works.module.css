@@ -65,4 +65,59 @@
 .work_slider__content {
   box-shadow: 0 30px 60px rgb(0 0 0 / 35%);
   height: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slide_no {
+  line-height: 120px;
+  position: absolute;
+  left: -25px;
+  bottom: 0;
+  font-size: 120px;
+  /* display: block; */
+  color: var(--primary-black);
+  font-weight: 900;
+  font-family: museo-sans;
+}
+
+.work_slide_role,
+.work_slide_company {
+  display: inline-block;
+  color: var(--primary-black);
+  margin: 1em 0 0 0;
+  font-size: 14px;
+  font-family: museo-sans;
+  text-transform: uppercase;
+}
+
+.work_slide_role_title,
+.work_slide_company_title {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-family: museo-sans;
+}
+
+.work_slide_content {
+  display: inline-block;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 2.5em;
+  transform: translateY(-50%) translateY(-0.5em);
+}
+
+.work_slide_project_name {
+  display: inline-block;
+  line-height: 48px;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-black);
+  text-align: center;
+  /* right: 0; */
 }
