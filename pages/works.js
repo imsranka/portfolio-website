@@ -120,19 +120,19 @@ const Works = () => {
 
   return (
     <div className={wStyles.work_wrapper}>
+      <button
+        className={wStyles.button_up}
+        onClick={() => backSlide(activeSlide)}
+      >
+        &lt;
+      </button>
+      <button
+        className={wStyles.button_down}
+        onClick={() => nextSlide(activeSlide)}
+      >
+        &gt;
+      </button>
       <ul className={wStyles.work_container}>
-        <button
-          className={wStyles.button_left}
-          onClick={() => backSlide(activeSlide)}
-        >
-          &lt;
-        </button>
-        <button
-          className={wStyles.button_right}
-          onClick={() => nextSlide(activeSlide)}
-        >
-          &gt;
-        </button>
         {projects.map((proj, i) => (
           <li
             className={classArr[i]}
