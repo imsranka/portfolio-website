@@ -69,6 +69,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: black;
 }
 
 .slide_no {
@@ -78,19 +79,42 @@
   bottom: 0;
   font-size: 120px;
   /* display: block; */
-  color: var(--primary-black);
+  /* color: var(--primary-black); */
+  color: var(--primary-white);
   font-weight: 900;
   font-family: museo-sans;
 }
 
 .work_slide_role,
 .work_slide_company {
+  position: relative;
   display: inline-block;
-  color: var(--primary-black);
+  /* color: var(--primary-black); */
+  color: var(--primary-white);
   margin: 1em 0 0 0;
   font-size: 14px;
   font-family: museo-sans;
   text-transform: uppercase;
+}
+
+.work_slider__content::before {
+  top: 0;
+}
+
+.work_slider__content::after {
+  bottom: 0;
+}
+
+.work_slider__content::before,
+.work_slider__content::after {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 1px;
+  left: 60px;
+  background: #ffffff;
+  z-index: 2;
+  opacity: 0.2;
 }
 
 .work_slide_role_title,
@@ -109,15 +133,58 @@
   transform: translateY(-50%) translateY(-0.5em);
 }
 
-.work_slide_project_name {
-  display: inline-block;
-  line-height: 48px;
-  font-size: 48px;
+.work_slide_project_main_wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--primary-black);
   text-align: center;
+}
+
+.work_slide_project_name {
+  display: inline-block;
+  line-height: 48px;
+  font-size: 48px;
+  /* color: var(--primary-black); */
+  color: var(--primary-white);
   /* right: 0; */
+}
+
+.see_more_btn {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 2px inset #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 2em 0 0 0;
+  height: 64px;
+  width: 165px;
+  line-height: 64px;
+  /* padding: 0.75em; */
+  text-transform: uppercase;
+  /* transition: all 0.2s cubic-bezier(0.15, 0.005, 0.155, 1); */
+}
+
+.see_more_btn:hover {
+  color: #183df2;
+}
+
+.see_more_btn::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  transition: all 0.2s cubic-bezier(0.15, 0.005, 0.155, 1);
+  transform: skew(-10deg) translate3d(-120%, 0, 0);
+}
+
+.see_more_btn:hover::after {
+  transform: skew(-10deg) translate3d(-10%, 0, 0);
 }

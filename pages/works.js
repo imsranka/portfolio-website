@@ -1,11 +1,10 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { projects } from "../shared/data";
-import coverBG from "../assets/images/cover.jpg";
+import coverBG from "../assets/images/cover4.jpg";
 import wStyles from "../styles/Works.module.css";
 import Image from "next/image";
 
 const Works = () => {
-  console.log(coverBG);
   const [activeSlide, setActiveSlide] = useState(0);
   const [classArr, setClassArr] = useState([]);
   const [initClassArr, setInitClassArr] = useState([]);
@@ -145,17 +144,28 @@ const Works = () => {
           >
             <article
               className={wStyles.work_slider__content}
+              // style={{ backgroundColor: "black" }}
               // style={{ backgroundImage: "url(" + `${coverBG.src}` + ")" }}
             >
-              <Image
+              {/* <figure>
+
+              </figure> */}
+              {/* <Image
                 src={coverBG}
                 alt="ras"
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
-              />
+              /> */}
               <span className={wStyles.slide_no}>{proj.id}</span>
-              <div className={wStyles.work_slide_project_name}>{proj.name}</div>
+              <div className={wStyles.work_slide_project_main_wrapper}>
+                <div className={wStyles.work_slide_project_name}>
+                  {proj.name}
+                </div>
+                <div />
+                <div className={wStyles.see_more_btn}>{"See More >>"}</div>
+              </div>
+
               <div className={wStyles.work_slide_content}>
                 <div className={wStyles.work_slide_role}>
                   <strong className={wStyles.work_slide_role_title}>
