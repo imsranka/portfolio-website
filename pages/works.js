@@ -1,13 +1,12 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { projects } from "../shared/data";
-import coverBG from "../assets/images/cover4.jpg";
+// import coverBG from "../assets/images/cover4.jpg";
 import wStyles from "../styles/Works.module.css";
-import Image from "next/image";
 
 const Works = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [classArr, setClassArr] = useState([]);
-  const [initClassArr, setInitClassArr] = useState([]);
+  // const [initClassArr, setInitClassArr] = useState([]);
   let c1 = wStyles.work_slider;
   let c2 = wStyles.work_slider__active;
   let c3 = wStyles.work_slider__no_transition;
@@ -150,13 +149,6 @@ const Works = () => {
               {/* <figure>
 
               </figure> */}
-              {/* <Image
-                src={coverBG}
-                alt="ras"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              /> */}
               <span className={wStyles.slide_no}>{proj.id}</span>
               <div className={wStyles.work_slide_project_main_wrapper}>
                 <div className={wStyles.work_slide_project_name}>
