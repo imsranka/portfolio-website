@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { projects } from "../shared/data";
-import coverBG from "../assets/images/cover4.jpg";
+// import coverBG from "../assets/images/cover4.jpg";
 import wStyles from "../styles/Works.module.css";
 import Image from "next/image";
 
