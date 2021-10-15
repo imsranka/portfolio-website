@@ -9,12 +9,9 @@ function useDelayUnmount(isMounted, delayTime) {
   useEffect(() => {
     let timeoutId;
     if (isMounted && !shouldRender) {
-      console.log("if");
       setShouldRender(true);
     } else if (!isMounted && shouldRender) {
-      console.log("elif");
       timeoutId = setTimeout(() => {
-        console.log("deltim");
         setShouldRender(false);
       }, delayTime);
     }
