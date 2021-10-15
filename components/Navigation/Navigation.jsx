@@ -1,11 +1,20 @@
 import React from "react";
-import Link from "next/link";
 import navStyles from "../../styles/Navigation.module.css";
 import { useRouter } from "next/router";
 
-const Navigation = () => {
+const Navigation = ({ setIsmounted }) => {
   const router = useRouter();
-  console.log(router);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsmounted(false);
+    let { href } = e.target;
+    let mID = setTimeout(() => {
+      router.push(href);
+      setIsmounted(true);
+      clearInterval(mID);
+    }, 500);
+  };
 
   return (
     <nav className={navStyles.nav_wrapper}>
@@ -20,9 +29,11 @@ const Navigation = () => {
               : navStyles.nav_no_strike
           }`}
         >
-          <Link href="/">
-            <a>home</a>
-          </Link>
+          {/* <Link href="/"> */}
+          <a href={"/"} onClick={handleClick}>
+            home
+          </a>
+          {/* </Link> */}
         </span>
         {/* <span
           className={`${navStyles.nav_link} ${
@@ -42,9 +53,9 @@ const Navigation = () => {
               : navStyles.no_strike
           } navStyles.nav_link`}
         >
-          <Link href="/works">
-            <a>works</a>
-          </Link>
+          <a href={"/works"} onClick={handleClick}>
+            works
+          </a>
         </span>
         <span
           className={`${navStyles.nav_link} ${
@@ -53,9 +64,9 @@ const Navigation = () => {
               : navStyles.no_strike
           } navStyles.nav_link`}
         >
-          <Link href="/contact">
-            <a>contact</a>
-          </Link>
+          <a href={"/contact"} onClick={handleClick}>
+            contact
+          </a>
         </span>
       </div>
     </nav>

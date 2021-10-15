@@ -20,7 +20,7 @@ nav.nav_wrapper {
 }
 
 .nav_link:hover {
-  color: violet;
+  color: var(--link);
   /* text-decoration: underline; */
 }
 
@@ -43,6 +43,8 @@ nav.nav_wrapper {
 
 .nav_strike {
   text-decoration: line-through;
+  color: var(--link);
+  /* text-decoration-color: thistle; */
 }
 
 .nav_no_strike {
