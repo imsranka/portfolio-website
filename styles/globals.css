@@ -8,7 +8,9 @@ body {
 body {
   background: var(--primary-white);
   color: var(--primary-black);
-  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* height: 100vh; */
   /* width: 100vw; */
 }
 
@@ -74,3 +76,24 @@ a {
   grid-template: 1fr/250px 100%;
 }
 /* #393341 */
+
+div.sr_remove {
+  opacity: 1;
+  animation: outAnimation 500ms ease-out;
+  /* animation-fill-mode: forwards; */
+  /* animation-delay: 2s; */
+}
+
+@keyframes outAnimation {
+  0% {
+    transform: translateX(0, 0);
+  }
+  50% {
+    transform: translate(50%, 0);
+    /* opacity: 0.5; */
+  }
+  100% {
+    transform: translate(100%, 0);
+    opacity: 0;
+  }
+}
