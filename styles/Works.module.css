@@ -188,3 +188,20 @@
 .see_more_btn:hover::after {
   transform: skew(-10deg) translate3d(-10%, 0, 0);
 }
+div.work_slide_in {
+  /* transform: translateX(100%); */
+  animation: inAnimation 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes inAnimation {
+  0% {
+    transform: translate(100%, 0);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
