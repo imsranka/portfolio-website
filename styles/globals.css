@@ -62,7 +62,7 @@ a {
 }
 
 .sr-wrapper {
-  width: calc(100% - 250px);
+  width: 100%;
   color: var(--main-font-color);
 }
 
@@ -71,16 +71,21 @@ a {
   /* background: var(--main-background); */
 }
 
-.grid {
+.grid_with_nav {
   display: grid;
-  grid-template: 1fr/250px 100%;
+  grid-template: 1fr/250px calc(100% - 250px);
+}
+
+.grid_no_nav {
+  display: grid;
+  grid-template: 1fr/1fr;
 }
 /* #393341 */
 
 div.sr_remove {
   opacity: 1;
   animation: outAnimation 500ms ease-out;
-  /* animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
   /* animation-delay: 2s; */
 }
 
