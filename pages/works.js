@@ -1,5 +1,6 @@
-import { useRouter } from "next/dist/client/router";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import { projects } from "../shared/data";
 // import coverBG from "../assets/images/cover4.jpg";
 import wStyles from "../styles/Works.module.css";
@@ -128,78 +129,83 @@ const Works = () => {
   }, []);
 
   return (
-    <div className={`${wStyles.work_wrapper}`}>
-      <button
-        className={wStyles.button_up}
-        onClick={() => backSlide(activeSlide)}
-      >
-        &lt;
-      </button>
-      <button
-        className={wStyles.button_down}
-        onClick={() => nextSlide(activeSlide)}
-      >
-        &gt;
-      </button>
-      <ul className={wStyles.work_container}>
-        {projects.map((proj, i) => (
-          <li
-            className={classArr[i]}
-            key={proj.name}
-            onTransitionEnd={classChangeOnTrans}
-            onLoad={(i) => console.log("hi", i)}
-          >
-            <article
-              className={wStyles.work_slider__content}
-              // style={{ backgroundColor: "black" }}
-              // style={{ backgroundImage: "url(" + `${coverBG.src}` + ")" }}
+    <>
+      <Head>
+        <title>SR | Works</title>
+      </Head>
+      <div className={`${wStyles.work_wrapper}`}>
+        <button
+          className={wStyles.button_up}
+          onClick={() => backSlide(activeSlide)}
+        >
+          &lt;
+        </button>
+        <button
+          className={wStyles.button_down}
+          onClick={() => nextSlide(activeSlide)}
+        >
+          &gt;
+        </button>
+        <ul className={wStyles.work_container}>
+          {projects.map((proj, i) => (
+            <li
+              className={classArr[i]}
+              key={proj.name}
+              onTransitionEnd={classChangeOnTrans}
+              onLoad={(i) => console.log("hi", i)}
             >
-              <span className={wStyles.slide_no}>{proj.id}</span>
-              <div className={wStyles.work_slide_project_main_wrapper}>
-                <div className={wStyles.work_slide_project_name}>
-                  {proj.name}
+              <article
+                className={wStyles.work_slider__content}
+                // style={{ backgroundColor: "black" }}
+                // style={{ backgroundImage: "url(" + `${coverBG.src}` + ")" }}
+              >
+                <span className={wStyles.slide_no}>{proj.id}</span>
+                <div className={wStyles.work_slide_project_main_wrapper}>
+                  <div className={wStyles.work_slide_project_name}>
+                    {proj.name}
+                  </div>
+                  <div />
+                  <div
+                    className={wStyles.see_more_btn}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setProjID(proj.name.toLowerCase().split(" ").join("-"));
+                      router.push(
+                        `/work/${proj.name.toLowerCase().split(" ").join("-")}`,
+                        undefined,
+                        {
+                          shallow: true,
+                        }
+                      );
+                    }}
+                  >
+                    {"See More >>"}
+                  </div>
                 </div>
-                <div />
-                <div
-                  className={wStyles.see_more_btn}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setProjID(proj.name.toLowerCase().split(" ").join("-"));
-                    router.push(
-                      `/work/${proj.name.toLowerCase().split(" ").join("-")}`,
-                      undefined,
-                      {
-                        shallow: true,
-                      }
-                    );
-                  }}
-                >
-                  {"See More >>"}
-                </div>
-              </div>
 
-              <div className={wStyles.work_slide_content}>
-                <div className={wStyles.work_slide_role}>
-                  <strong className={wStyles.work_slide_role_title}>
-                    Role
-                  </strong>
+                <div className={wStyles.work_slide_content}>
+                  <div className={wStyles.work_slide_role}>
+                    <strong className={wStyles.work_slide_role_title}>
+                      Role
+                    </strong>
+                    <br />
+                    {proj.role}
+                  </div>
                   <br />
-                  {proj.role}
+                  <div className={wStyles.work_slide_company}>
+                    <strong className={wStyles.work_slide_company_title}>
+                      Company
+                    </strong>
+                    <br />
+                    {proj.org}
+                  </div>
                 </div>
-                <br />
-                <div className={wStyles.work_slide_company}>
-                  <strong className={wStyles.work_slide_company_title}>
-                    Company
-                  </strong>
-                  <br />
-                  {proj.org}
-                </div>
-              </div>
-            </article>
-          </li>
-        ))}
-      </ul>
-    </div>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
