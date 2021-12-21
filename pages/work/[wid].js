@@ -2,7 +2,7 @@ import { useRouter } from "next/dist/client/router";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { NavShowContext } from "../../utils/context/navContext";
 import pStyle from "../../styles/Project.module.css";
-import Logo from "../../components/Name/logo";
+import Logo from "../../components/Name/Logo";
 import Image from "next/image";
 import hexOverlay from "../../assets/images/overlays-02.svg";
 import { projects } from "../../shared/data";
