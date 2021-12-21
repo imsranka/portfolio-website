@@ -1,7 +1,9 @@
 .outer_container {
   /* height: 100vh; */
   width: 100%;
-  padding: 2em 2em 2em 3em;
+  padding: 2em 4em;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 section.concept,
@@ -13,12 +15,20 @@ section.design {
 
 .title {
   color: var(--link);
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 18px;
+  line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 900;
   font-family: museo-sans;
+  background-image: url(../assets/images/overlays-02.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  text-align: center;
 }
 
 .banner {
@@ -51,4 +61,69 @@ section.design {
   position: fixed;
   right: 2em;
   top: 1em;
+}
+
+.project_wrapper {
+  background-color: #f7f9fb;
+}
+
+.content::before {
+  display: block;
+  content: "";
+  /* padding: 1em; */
+}
+
+.content {
+  padding: 1em 0;
+}
+
+.content > p {
+  font-family: "museo-sans";
+  /* white-space: break-spaces; */
+  float: left;
+  width: 50%;
+  padding: 0 1em 0 0;
+  line-height: 22px;
+}
+
+.content > p:not(:first-child) {
+  float: right;
+  padding: 0 0 0 1em;
+}
+
+.content::after {
+  clear: both;
+}
+
+.logo_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero_bg {
+  height: 400px;
+  background-color: black;
+  position: relative;
+  font-size: 16px;
+}
+
+.credits_main {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "museo-sans";
+  line-height: 28px;
+}
+
+.credit_name {
+  font-style: italic;
+  /* line-height: 20px; */
+  font-size: 18px;
+  letter-spacing: 0.075em;
 }
