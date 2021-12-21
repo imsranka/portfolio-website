@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import navStyles from "../../styles/Navigation.module.css";
 import { useRouter } from "next/router";
+import Logo from "../Name/logo";
 
 const Navigation = ({ setIsmounted }) => {
   const router = useRouter();
@@ -8,7 +9,7 @@ const Navigation = ({ setIsmounted }) => {
 
   useEffect(() => {
     let path = router.pathname;
-    let x = ["/works", "/", "/contact"].includes(path);
+    let x = ["/work", "/", "/contact"].includes(path);
     console.log(x);
     setShowNav(x);
   }, [router.pathname]);
@@ -30,7 +31,7 @@ const Navigation = ({ setIsmounted }) => {
   return (
     showNav && (
       <nav className={navStyles.nav_wrapper}>
-        <h3 className={navStyles.logo}>Sakshi Ranka</h3>
+        <Logo />
         <h1 className={navStyles.nav_title}>Frontend</h1>
         <h1 className={navStyles.nav_title}>Developer</h1>
         <div className={navStyles.nav_menu}>
@@ -65,7 +66,7 @@ const Navigation = ({ setIsmounted }) => {
                 : navStyles.no_strike
             } navStyles.nav_link`}
           >
-            <a href={"/works"} onClick={handleClick}>
+            <a href={"/work"} onClick={handleClick}>
               works
             </a>
           </span>
