@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: 1,
+    id: 3,
     name: "Covid DSS",
     description: "Lorem ipsum dolor simet",
     role: "Frontend Developer",
@@ -14,7 +14,7 @@ export const projects = [
     credits: ["Poonam Dhoot", "Yash", "Kritika"],
   },
   {
-    id: 2,
+    id: 4,
     name: "UP Census",
     description: "Lorem ipsum dolor simet",
     role: "Frontend Developer",
@@ -29,7 +29,7 @@ export const projects = [
     credits: ["Aman Rai", "Arpit", "Tarang", "Kritika"],
   },
   {
-    id: 3,
+    id: 1,
     name: "Saksham",
     description: "Lorem ipsum dolor simet",
     role: "Frontend Developer",
@@ -42,7 +42,7 @@ export const projects = [
     credits: ["Arpit", "Anil Sahoo", "Nishant", "Disha", "Riya"],
   },
   {
-    id: 4,
+    id: 2,
     name: "Data Uploading Portal",
     description: "Lorem ipsum dolor simet",
     role: "Frontend Developer",
