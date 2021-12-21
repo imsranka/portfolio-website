@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { projects } from "../../shared/data";
 // import coverBG from "../assets/images/cover4.jpg";
 import wStyles from "../../styles/Works.module.css";
+import { dynamicCompare } from "../../shared/utils";
 
 const Works = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -147,7 +148,7 @@ const Works = () => {
           &gt;
         </button>
         <ul className={wStyles.work_container}>
-          {projects.map((proj, i) => (
+          {projects.sort(dynamicCompare("id")).map((proj, i) => (
             <li
               className={classArr[i]}
               key={proj.name}
