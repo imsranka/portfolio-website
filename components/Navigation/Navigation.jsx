@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import navStyles from "../../styles/Navigation.module.css";
 import { useRouter } from "next/router";
-import Logo from "../Name/logo";
+import Logo from "../Name/Logo";
 
 const Navigation = ({ setIsmounted }) => {
   const router = useRouter();
