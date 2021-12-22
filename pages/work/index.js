@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { projects } from "../../shared/data";
@@ -134,7 +134,10 @@ const Works = () => {
       <Head>
         <title>SR | Works</title>
       </Head>
-      <div className={`${wStyles.work_wrapper}`}>
+      <div
+        className={`${wStyles.work_wrapper}`}
+        onTouchStart={(e) => console.log(e)}
+      >
         <button
           className={wStyles.button_up}
           onClick={() => backSlide(activeSlide)}
