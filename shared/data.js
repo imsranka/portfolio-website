@@ -12,6 +12,28 @@ export const projects = [
       In parallel, I aided the development of GeoJSON files.`,
     ],
     credits: ["Poonam Dhoot", "Yash", "Kritika"],
+    images: [
+      {
+        path: "/covid dss/login covid dss.png",
+        alt: "Login",
+        caption: "Login Page",
+      },
+      {
+        path: "/covid dss/mis1.png",
+        alt: "MIS Page",
+        caption: "MIS Page for Spread related Information",
+      },
+      {
+        path: "/covid dss/Screenshot (465).png",
+        alt: "Login",
+        caption: "MIS Page for Hospital related Information",
+      },
+      {
+        path: "/covid dss/eco1.png",
+        alt: "Login",
+        caption: "Economic Page for Red Lockdown Plan",
+      },
+    ],
   },
   {
     id: 4,
@@ -40,6 +62,28 @@ export const projects = [
       `A second phase to this was to enable industries to hire these Shramiks based on their requirement. My Involvement include creating a dashboard, where the industries can register themselves, understand the availability of workers based on States & Districts & creating an Admin dashboard to get analytical insights. In this project, I got to thoroughly explore & experiment with Mapbox maps, as a better part of interaction was controlled via Maps.`,
     ],
     credits: ["Arpit", "Anil Sahoo", "Nishant", "Disha", "Riya"],
+    images: [
+      {
+        path: "/Admin Login.png",
+        alt: "Login",
+        caption: "Login Page for Admin",
+      },
+      {
+        path: "/saksham landing.png",
+        alt: "Saksham Landing",
+        caption: "Saksham Landing Page",
+      },
+      {
+        path: "/industry 2.png",
+        alt: "Industry Dashboard",
+        caption: "Shramik Page of Industry Dashboard",
+      },
+      {
+        path: "/admin 1.png",
+        alt: "Admin Dashboard",
+        caption: "Shramik Page of Admin Dashboard",
+      },
+    ],
   },
   {
     id: 2,
