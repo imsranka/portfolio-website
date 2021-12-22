@@ -54,3 +54,71 @@ nav.nav_wrapper {
 .nav_title {
   font-family: " museo-sans";
 }
+
+@media screen and (max-width: 800px) {
+  nav.nav_wrapper {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .nav_menu {
+    position: absolute;
+    display: inline-block;
+    top: 1em;
+    right: 1em;
+    padding: 0;
+    width: auto;
+    bottom: auto;
+  }
+
+  .nav_link {
+    display: inline;
+    padding: 0 10px;
+    line-height: normal;
+    font-size: 16px;
+  }
+
+  .nav_title {
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+  }
+  .nav_title:not(:first-of-type) {
+    margin: 0 0 0 5px;
+  }
+
+  .logo {
+    display: block;
+    /* line-height: calc(44px - 1em);
+    height: calc(44px - 1em); */
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav_menu {
+    position: relative;
+    display: block;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav_wrapper {
+    text-align: center;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  nav.nav_wrapper {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: inline-block;
+    padding: 0;
+  }
+}

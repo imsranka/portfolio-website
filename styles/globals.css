@@ -102,3 +102,10 @@ div.sr_remove {
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .grid_with_nav {
+    display: grid;
+    grid-template: 1fr calc(100vh - 100px) / 100%;
+  }
+}
