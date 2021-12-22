@@ -127,3 +127,17 @@ section.design {
   font-size: 18px;
   letter-spacing: 0.075em;
 }
+
+.image_container {
+  padding: 1em;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px 3px 19px 0px #74737317;
+  margin: 0 0 1em 0;
+}
+
+.image_caption {
+  text-align: center;
+  font-style: italic;
+  padding: 5px 0 0 0;
+}

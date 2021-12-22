@@ -70,6 +70,14 @@ const Wid = () => {
             </div>
           )}
         </section>
+        <section>
+          {projInfo.images.map((img, i) => (
+            <div key={i + img} className={pStyle.image_container}>
+              <img src={img.path} alt={img.alt} width="100%" />
+              <p className={pStyle.image_caption}>{img.caption}</p>
+            </div>
+          ))}
+        </section>
         <aside>
           <span className={pStyle.credits_main}>Credits</span>
           <div>
