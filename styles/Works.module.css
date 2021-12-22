@@ -253,10 +253,11 @@ div.work_slide_in {
     color: var(--primary-white);
     /* right: 0; */
   }
-  .work_slide_role,
+
+  /* .work_slide_role,
   .work_slide_company {
     font-size: 12px;
-  }
+  } */
 
   .see_more_btn {
     /* font-size: 14px; */
