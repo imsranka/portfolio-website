@@ -270,15 +270,7 @@ div.work_slide_in {
 
 @media screen and (max-width: 500px) {
   .work_slider {
-    /* display: inline-block;
-    list-style-type: none;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0; */
-    /* transform: translateY(110%); */
-    transition: all 0.6s cubic-bezier(0.15, 0.005, 0.155, 1);
+    /* transition: all 0.6s cubic-bezier(0.15, 0.005, 0.155, 1); */
     padding: 1em 1.5em;
   }
 
