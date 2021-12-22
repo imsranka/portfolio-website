@@ -141,3 +141,15 @@ section.design {
   font-style: italic;
   padding: 5px 0 0 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .content > p {
+    width: 100%;
+    padding: 0;
+  }
+
+  .content > p:not(:first-child) {
+    float: left;
+    padding: 1em 0 0 0;
+  }
+}
