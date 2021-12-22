@@ -10,7 +10,7 @@
 .home_container {
   text-align: center;
   position: relative;
-  width: 77%;
+  /* width: 77%; */
   font-family: "Playfair Display";
   box-shadow: 0 30px 60px rgb(0 0 0 / 35%);
   padding: 2em;
@@ -72,4 +72,61 @@
 
 .social:last-child::after {
   content: none;
+}
+
+@media screen and (max-width: 550px) {
+  .home_title {
+    /* white-space: pre-line; */
+    line-height: 28px;
+    font-size: 24px;
+  }
+
+  .home_subtitle,
+  .home_intro {
+    /* white-space: pre-wrap; */
+    line-height: 26px;
+    font-size: 16px;
+  }
+
+  .home_curr_info {
+    line-height: unset;
+    font-size: 14px;
+  }
+
+  .home_container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .home_title {
+    /* white-space: pre-line; */
+    line-height: unset;
+    font-size: 16px;
+  }
+
+  .home_subtitle,
+  .home_intro {
+    /* white-space: pre-wrap; */
+    line-height: unset;
+    font-size: 14px;
+  }
+
+  .home_curr_info {
+    line-height: unset;
+    font-size: 12px;
+  }
+
+  .home_container {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .social {
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-right: 0.25em;
+    /* display: inline-block; */
+  }
 }

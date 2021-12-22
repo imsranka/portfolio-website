@@ -1,10 +1,9 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { projects } from "../../shared/data";
+import { projects } from "../shared/data";
 // import coverBG from "../assets/images/cover4.jpg";
-import wStyles from "../../styles/Works.module.css";
-import { dynamicCompare } from "../../shared/utils";
+import wStyles from "../styles/Works.module.css";
 
 const Works = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -84,7 +83,7 @@ const Works = () => {
     }
     setClassArr(x);
     console.log(projId);
-    router.push("/work", undefined, {
+    router.push("/works", undefined, {
       shallow: true,
     });
   };
@@ -134,10 +133,7 @@ const Works = () => {
       <Head>
         <title>SR | Works</title>
       </Head>
-      <div
-        className={`${wStyles.work_wrapper}`}
-        onTouchStart={(e) => console.log(e)}
-      >
+      <div className={`${wStyles.work_wrapper}`}>
         <button
           className={wStyles.button_up}
           onClick={() => backSlide(activeSlide)}
@@ -151,7 +147,7 @@ const Works = () => {
           &gt;
         </button>
         <ul className={wStyles.work_container}>
-          {projects.sort(dynamicCompare("id")).map((proj, i) => (
+          {projects.map((proj, i) => (
             <li
               className={classArr[i]}
               key={proj.name}
@@ -175,7 +171,10 @@ const Works = () => {
                       e.preventDefault();
                       setProjID(proj.name.toLowerCase().split(" ").join("-"));
                       router.push(
-                        `/work/${proj.name.toLowerCase().split(" ").join("-")}`,
+                        `/works/${proj.name
+                          .toLowerCase()
+                          .split(" ")
+                          .join("-")}`,
                         undefined,
                         {
                           shallow: true,

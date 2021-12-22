@@ -1,15 +1,13 @@
 import { useRouter } from "next/dist/client/router";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
-import { projects } from "../shared/data";
+import { projects } from "../../shared/data";
 // import coverBG from "../assets/images/cover4.jpg";
-import wStyles from "../styles/Works.module.css";
+import wStyles from "../../styles/Works.module.css";
 
 const Works = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [classArr, setClassArr] = useState([]);
   const router = useRouter();
-  const [projId, setProjID] = useState(null);
-  const [unmount, setUnmount] = useState(false);
   // const [initClassArr, setInitClassArr] = useState([]);
   let c1 = wStyles.work_slider;
   let c2 = wStyles.work_slider__active;
@@ -38,6 +36,7 @@ const Works = () => {
   const nextSlide = (curr) => {
     let len = projects.length;
     let x = [];
+
     curr === len - 1 ? setActiveSlide(0) : setActiveSlide((prev) => ++prev);
 
     if (curr === 0) {
@@ -63,7 +62,6 @@ const Works = () => {
     let len = projects.length;
     let x = [];
     curr === 0 ? setActiveSlide(len - 1) : setActiveSlide((prev) => prev - 1);
-
     if (curr === 0) {
       x[0] = [c1].join(" ");
       x[len - 1] = [c1, c4, c3].join(" ");
@@ -81,10 +79,6 @@ const Works = () => {
       });
     }
     setClassArr(x);
-    console.log(projId);
-    router.push("/works", undefined, {
-      shallow: true,
-    });
   };
 
   const classChangeOnTrans = () => {
@@ -127,8 +121,12 @@ const Works = () => {
     setClassArr(x);
   }, []);
 
+  useEffect(() => {
+    console.log(router);
+  }, [router.query.counter]);
+
   return (
-    <div className={`${wStyles.work_wrapper}`}>
+    <div className={wStyles.work_wrapper}>
       <button
         className={wStyles.button_up}
         onClick={() => backSlide(activeSlide)}
@@ -164,14 +162,9 @@ const Works = () => {
                   className={wStyles.see_more_btn}
                   onClick={(e) => {
                     e.preventDefault();
-                    setProjID(proj.name.toLowerCase().split(" ").join("-"));
-                    router.push(
-                      `/work/${proj.name.toLowerCase().split(" ").join("-")}`,
-                      undefined,
-                      {
-                        shallow: true,
-                      }
-                    );
+                    router.push("/work/xyz", undefined, {
+                      shallow: true,
+                    });
                   }}
                 >
                   {"See More >>"}
