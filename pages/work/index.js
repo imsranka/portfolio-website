@@ -84,7 +84,6 @@ const Works = () => {
       });
     }
     setClassArr(x);
-    console.log(projId);
     router.push("/work", undefined, {
       shallow: true,
     });
@@ -133,12 +132,10 @@ const Works = () => {
   const handleTS = (e) => {
     e.preventDefault();
     touchYstart = e.changedTouches[0].clientY;
-    console.log(touchYstart);
   };
 
   const handleTE = (e) => {
     touchYend = e.changedTouches[0].clientY;
-    console.log(touchYend);
     if (!touchYstart && !touchYend) {
       return;
     }
@@ -177,7 +174,7 @@ const Works = () => {
               className={classArr[i]}
               key={proj.name}
               onTransitionEnd={classChangeOnTrans}
-              onLoad={(i) => console.log("hi", i)}
+              // onLoad={(i) => console.log("hi", i)}
             >
               <article
                 className={wStyles.work_slider__content}

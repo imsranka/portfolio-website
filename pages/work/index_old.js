@@ -121,10 +121,6 @@ const Works = () => {
     setClassArr(x);
   }, []);
 
-  useEffect(() => {
-    console.log(router);
-  }, [router.query.counter]);
-
   return (
     <div className={wStyles.work_wrapper}>
       <button
@@ -145,7 +141,7 @@ const Works = () => {
             className={classArr[i]}
             key={proj.name}
             onTransitionEnd={classChangeOnTrans}
-            onLoad={(i) => console.log("hi", i)}
+            // onLoad={(i) => console.log("hi", i)}
           >
             <article
               className={wStyles.work_slider__content}
