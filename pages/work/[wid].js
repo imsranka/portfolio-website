@@ -8,7 +8,6 @@ import { projects } from "../../shared/data";
 import Head from "next/head";
 
 function getProjectInfo(wid) {
-  console.log(wid);
   return projects.find(
     (element) =>
       element.name.toLowerCase() === wid.replace(/-/g, " ").toLowerCase()
@@ -18,7 +17,6 @@ function getProjectInfo(wid) {
 const Wid = () => {
   const router = useRouter();
   const { wid } = router.query;
-  console.log(wid);
   const { showNav, setShowNav } = useContext(NavShowContext);
   const projInfo = useMemo(() => getProjectInfo(wid), [wid]);
 
@@ -28,14 +26,6 @@ const Wid = () => {
       setShowNav(true);
     };
   }, []);
-
-  useEffect(() => {
-    // let x = projects.find(
-    //   (element) =>
-    //     element.name.toLowerCase() === wid.replace(/-/g, " ").toLowerCase()
-    // );
-    console.log(projInfo);
-  }, [projInfo]);
 
   return (
     <>
@@ -101,7 +91,6 @@ const Wid = () => {
 };
 
 export async function getServerSideProps(context) {
-  console.log(context);
   return {
     props: {
       wid: context.query.wid,

@@ -82,7 +82,7 @@ const Works = () => {
       });
     }
     setClassArr(x);
-    console.log(projId);
+    // console.log(projId);
     router.push("/works", undefined, {
       shallow: true,
     });
@@ -152,7 +152,7 @@ const Works = () => {
               className={classArr[i]}
               key={proj.name}
               onTransitionEnd={classChangeOnTrans}
-              onLoad={(i) => console.log("hi", i)}
+              // onLoad={(i) => console.log("hi", i)}
             >
               <article
                 className={wStyles.work_slider__content}

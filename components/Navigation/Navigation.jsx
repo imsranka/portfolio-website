@@ -10,7 +10,7 @@ const Navigation = ({ setIsmounted }) => {
   useEffect(() => {
     let path = router.pathname;
     let x = ["/work", "/", "/contact"].includes(path);
-    console.log(x);
+    // console.log(x);
     setShowNav(x);
   }, [router.pathname]);
 
@@ -20,7 +20,7 @@ const Navigation = ({ setIsmounted }) => {
     let { href } = e.target;
     let mID = setTimeout(() => {
       router.push(href);
-      console.log(router.pathname);
+      // console.log(router.pathname);
       clearInterval(mID);
     }, 400);
     router.events.on("routeChangeComplete", function () {
