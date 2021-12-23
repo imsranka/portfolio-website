@@ -17,6 +17,7 @@ const Works = () => {
   let c2 = wStyles.work_slider__active;
   let c3 = wStyles.work_slider__no_transition;
   let c4 = wStyles.work_slider__prev;
+  let touchYstart, touchYend;
 
   // let classes = useMemo(() => {
   //   let c1 = wStyles.work_slider;
@@ -129,6 +130,25 @@ const Works = () => {
     setClassArr(x);
   }, []);
 
+  const handleTS = (e) => {
+    e.preventDefault();
+    touchYstart = e.changedTouches[0].clientY;
+    console.log(touchYstart);
+  };
+
+  const handleTE = (e) => {
+    touchYend = e.changedTouches[0].clientY;
+    console.log(touchYend);
+    if (!touchYstart && !touchYend) {
+      return;
+    }
+    if (touchYend < touchYstart) {
+      nextSlide(activeSlide);
+    } else if (touchYend > touchYstart) {
+      backSlide(activeSlide);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -136,7 +156,8 @@ const Works = () => {
       </Head>
       <div
         className={`${wStyles.work_wrapper}`}
-        onTouchStart={(e) => console.log(e)}
+        onTouchStart={handleTS}
+        onTouchEnd={handleTE}
       >
         <button
           className={wStyles.button_up}
