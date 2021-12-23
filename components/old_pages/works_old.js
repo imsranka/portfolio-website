@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { projects } from "../shared/data";
+import { projects } from "../../shared/data";
 // import coverBG from "../assets/images/cover4.jpg";
 import wStyles from "../styles/Works.module.css";
 
