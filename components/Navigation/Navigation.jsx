@@ -77,9 +77,9 @@ const Navigation = ({ setIsmounted }) => {
                 : navStyles.no_strike
             } navStyles.nav_link`}
           >
-            <a href={"/contact"} onClick={handleClick}>
+            {/* <a href={"/contact"} onClick={handleClick}>
               contact
-            </a>
+            </a> */}
           </span>
         </div>
       </nav>
